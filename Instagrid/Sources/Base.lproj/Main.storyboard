@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lug-MG-dBF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--FirstLayoutView-->
+        <scene sceneID="eli-ye-CMa">
+            <objects>
+                <viewController title="FirstLayoutView" id="ykT-xN-yZM" customClass="GridViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jbd-ra-JXg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="31" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b4q-oP-2j3">
+                                <rect key="frame" x="38" y="611" width="300" height="36"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msn-sQ-yM7">
+                                        <rect key="frame" x="0.0" y="0.0" width="78" height="36"/>
+                                        <state key="normal" image="Layout 1"/>
+                                        <connections>
+                                            <action selector="didPressFirstGridButton:" destination="ykT-xN-yZM" eventType="touchUpInside" id="e8h-0x-GfQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsb-V8-3gE">
+                                        <rect key="frame" x="109" y="0.0" width="80" height="36"/>
+                                        <state key="normal" image="Layout 2"/>
+                                        <connections>
+                                            <action selector="didPressSecondGridButton:" destination="ykT-xN-yZM" eventType="touchUpInside" id="9oh-t6-mAS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QD0-h0-fAr">
+                                        <rect key="frame" x="220" y="0.0" width="80" height="36"/>
+                                        <state key="normal" image="Layout 3"/>
+                                        <connections>
+                                            <action selector="didPressThirdGridButton:" destination="ykT-xN-yZM" eventType="touchUpInside" id="bMf-yL-fRD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihk-k3-OSe">
+                                <rect key="frame" x="38" y="228" width="300" height="300"/>
+                                <color key="backgroundColor" red="0.062745098040000002" green="0.40000000000000002" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ihk-k3-OSe" secondAttribute="height" multiplier="1:1" id="vVx-VF-syA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.69411764710000001" green="0.84705882349999995" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="b4q-oP-2j3" firstAttribute="top" secondItem="Ihk-k3-OSe" secondAttribute="bottom" constant="83" id="3f9-Mr-lia"/>
+                            <constraint firstItem="A6n-EG-IUj" firstAttribute="trailing" secondItem="Ihk-k3-OSe" secondAttribute="trailing" constant="37" id="5XC-1A-JVC"/>
+                            <constraint firstItem="A6n-EG-IUj" firstAttribute="bottom" secondItem="b4q-oP-2j3" secondAttribute="bottom" constant="20" id="9CD-fb-Lvi"/>
+                            <constraint firstItem="b4q-oP-2j3" firstAttribute="leading" secondItem="A6n-EG-IUj" secondAttribute="leading" constant="38" id="Onk-Da-e3u"/>
+                            <constraint firstItem="A6n-EG-IUj" firstAttribute="trailing" secondItem="b4q-oP-2j3" secondAttribute="trailing" constant="37" id="Peo-DX-nQV"/>
+                            <constraint firstItem="Ihk-k3-OSe" firstAttribute="leading" secondItem="A6n-EG-IUj" secondAttribute="leading" constant="38" id="Yzv-pN-fam"/>
+                            <constraint firstItem="Ihk-k3-OSe" firstAttribute="top" secondItem="A6n-EG-IUj" secondAttribute="top" constant="164" id="iDZ-bC-U6d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A6n-EG-IUj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IPg-aH-x9R"/>
+                    <connections>
+                        <outlet property="firstGridButton" destination="msn-sQ-yM7" id="V15-mN-r1Q"/>
+                        <outlet property="gridContainer" destination="Ihk-k3-OSe" id="Vne-a6-KzL"/>
+                        <outlet property="secondGridButton" destination="Xsb-V8-3gE" id="WQA-KZ-7qM"/>
+                        <outlet property="thirdGridButton" destination="QD0-h0-fAr" id="9Mm-gu-swT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tgD-aj-w29" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008.8" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="B8B-eK-6m1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lug-MG-dBF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RnL-wk-1Xa">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ykT-xN-yZM" kind="relationship" relationship="rootViewController" id="MyS-xc-s5z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VE7-kc-yTH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.599999999999994" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Layout 1" width="80" height="80"/>
+        <image name="Layout 2" width="80" height="80"/>
+        <image name="Layout 3" width="80" height="80"/>
+    </resources>
+</document>

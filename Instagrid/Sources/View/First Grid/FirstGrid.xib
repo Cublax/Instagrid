@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstGrid" customModule="Instagrid" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomButton" destination="tj1-ff-DAt" id="Yr9-uF-IaG"/>
+                <outlet property="bottomPictureView" destination="vEt-Yk-CGc" id="EmJ-hf-Mwj"/>
+                <outlet property="contentView" destination="JJf-yR-ayO" id="bn5-rQ-6wl"/>
+                <outlet property="upperLeftButton" destination="yKx-xf-mnF" id="udK-cS-iMC"/>
+                <outlet property="upperLeftPictureView" destination="H6R-pn-iCx" id="ObS-U1-8iD"/>
+                <outlet property="upperRightButton" destination="FWr-8e-1TZ" id="q1r-7e-fgR"/>
+                <outlet property="upperRightPictureView" destination="myC-de-r4y" id="1YZ-P3-nJ3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="JJf-yR-ayO" userLabel="Content View">
+            <rect key="frame" x="0.0" y="0.0" width="305" height="306"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vEt-Yk-CGc" userLabel="Bottom Picture View">
+                    <rect key="frame" x="15" y="158" width="270" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tj1-ff-DAt" userLabel="Bottom Button">
+                            <rect key="frame" x="0.0" y="0.0" width="270" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="didPressBottomButton:" destination="-1" eventType="touchUpInside" id="XT1-hS-Mr4"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="myC-de-r4y" userLabel="Upper Right Picture View">
+                    <rect key="frame" x="157" y="16" width="128" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWr-8e-1TZ" userLabel="Upper Right Button">
+                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="didPressUpperRightButton:" destination="-1" eventType="touchUpInside" id="YMR-Zy-eG5"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H6R-pn-iCx" userLabel="Upper Left Picture View">
+                    <rect key="frame" x="15" y="16" width="128" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKx-xf-mnF" userLabel="Upper Left Button">
+                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="didPressUpperLeftButton:" destination="-1" eventType="touchUpInside" id="gK2-p1-N0y"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.062745098040000002" green="0.40000000000000002" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="abz-aB-ja9"/>
+            <point key="canvasLocation" x="552.79999999999995" y="337.33133433283359"/>
+        </view>
+    </objects>
+</document>
