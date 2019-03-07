@@ -14,18 +14,15 @@
 		AC24988A21F72B13002EC428 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC24988921F72B13002EC428 /* ThirstySoftRegular.otf */; };
 		AC24988C21F72B3A002EC428 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC24988B21F72B3A002EC428 /* Delm-Medium.otf */; };
 		AC3DA2D9221ECE190041854A /* FirstGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3DA2D8221ECE190041854A /* FirstGrid.swift */; };
-		AC3DA2DB221ECE2B0041854A /* FirstGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3DA2DA221ECE2B0041854A /* FirstGridViewModel.swift */; };
 		AC3DA2DD221ED3960041854A /* FirstGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3DA2DC221ED3960041854A /* FirstGrid.xib */; };
 		AC3DA2DF2222A5CF0041854A /* SecondGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3DA2DE2222A5CF0041854A /* SecondGrid.xib */; };
-		AC532AB622171C79006BBED8 /* GridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC532AB522171C79006BBED8 /* GridViewModel.swift */; };
-		AC83F17A222714F10063EF6F /* ImageImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC83F179222714F10063EF6F /* ImageImport.swift */; };
+		AC532AB622171C79006BBED8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC532AB522171C79006BBED8 /* HomeViewModel.swift */; };
 		AC83F17B222718AF0063EF6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC24986A21F72918002EC428 /* Main.storyboard */; };
 		AC8A94372226B48900A00877 /* ThirdGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8A94362226B48900A00877 /* ThirdGrid.xib */; };
 		AC8A94392226B66C00A00877 /* ThirdGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8A94382226B66C00A00877 /* ThirdGrid.swift */; };
-		AC8A943B2226B67B00A00877 /* ThirdGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8A943A2226B67B00A00877 /* ThirdGridViewModel.swift */; };
-		ACB853AF2217168700F1653D /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB853AE2217168700F1653D /* GridViewController.swift */; };
+		ACB853AF2217168700F1653D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB853AE2217168700F1653D /* HomeViewController.swift */; };
 		ACCF23832226A19000929F3F /* SecondGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCF23822226A19000929F3F /* SecondGrid.swift */; };
-		ACCF23852226A24700929F3F /* SecondGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCF23842226A24700929F3F /* SecondGridViewModel.swift */; };
+		ACF1DF6622310F2D00F402E0 /* GridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1DF6522310F2D00F402E0 /* GridViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,17 +48,14 @@
 		AC24988921F72B13002EC428 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		AC24988B21F72B3A002EC428 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		AC3DA2D8221ECE190041854A /* FirstGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstGrid.swift; sourceTree = "<group>"; };
-		AC3DA2DA221ECE2B0041854A /* FirstGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstGridViewModel.swift; sourceTree = "<group>"; };
 		AC3DA2DC221ED3960041854A /* FirstGrid.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstGrid.xib; sourceTree = "<group>"; };
 		AC3DA2DE2222A5CF0041854A /* SecondGrid.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondGrid.xib; sourceTree = "<group>"; };
-		AC532AB522171C79006BBED8 /* GridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewModel.swift; sourceTree = "<group>"; };
-		AC83F179222714F10063EF6F /* ImageImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageImport.swift; sourceTree = "<group>"; };
+		AC532AB522171C79006BBED8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AC8A94362226B48900A00877 /* ThirdGrid.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdGrid.xib; sourceTree = "<group>"; };
 		AC8A94382226B66C00A00877 /* ThirdGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdGrid.swift; sourceTree = "<group>"; };
-		AC8A943A2226B67B00A00877 /* ThirdGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdGridViewModel.swift; sourceTree = "<group>"; };
-		ACB853AE2217168700F1653D /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
+		ACB853AE2217168700F1653D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ACCF23822226A19000929F3F /* SecondGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondGrid.swift; path = "Instagrid/Sources/View/Second Grid/SecondGrid.swift"; sourceTree = SOURCE_ROOT; };
-		ACCF23842226A24700929F3F /* SecondGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondGridViewModel.swift; sourceTree = "<group>"; };
+		ACF1DF6522310F2D00F402E0 /* GridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +139,8 @@
 		AC7C72A721FF18E500FA0CE0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				ACB853AE2217168700F1653D /* GridViewController.swift */,
-				AC532AB522171C79006BBED8 /* GridViewModel.swift */,
+				ACB853AE2217168700F1653D /* HomeViewController.swift */,
+				AC532AB522171C79006BBED8 /* HomeViewModel.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -154,6 +148,7 @@
 		AC7C72A821FF18EF00FA0CE0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ACF1DF6522310F2D00F402E0 /* GridViewModel.swift */,
 				AC8A94342226AB0A00A00877 /* First Grid */,
 				AC8A94352226AB2300A00877 /* Second Grid */,
 				AC8A943C2226B68300A00877 /* Third Grid */,
@@ -164,7 +159,6 @@
 		AC7C72A921FF18F700FA0CE0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AC83F179222714F10063EF6F /* ImageImport.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,7 +168,6 @@
 			children = (
 				AC3DA2DC221ED3960041854A /* FirstGrid.xib */,
 				AC3DA2D8221ECE190041854A /* FirstGrid.swift */,
-				AC3DA2DA221ECE2B0041854A /* FirstGridViewModel.swift */,
 			);
 			path = "First Grid";
 			sourceTree = "<group>";
@@ -184,7 +177,6 @@
 			children = (
 				AC3DA2DE2222A5CF0041854A /* SecondGrid.xib */,
 				ACCF23822226A19000929F3F /* SecondGrid.swift */,
-				ACCF23842226A24700929F3F /* SecondGridViewModel.swift */,
 			);
 			path = "Second Grid";
 			sourceTree = "<group>";
@@ -194,7 +186,6 @@
 			children = (
 				AC8A94362226B48900A00877 /* ThirdGrid.xib */,
 				AC8A94382226B66C00A00877 /* ThirdGrid.swift */,
-				AC8A943A2226B67B00A00877 /* ThirdGridViewModel.swift */,
 			);
 			path = "Third Grid";
 			sourceTree = "<group>";
@@ -306,14 +297,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC3DA2D9221ECE190041854A /* FirstGrid.swift in Sources */,
-				AC8A943B2226B67B00A00877 /* ThirdGridViewModel.swift in Sources */,
-				AC532AB622171C79006BBED8 /* GridViewModel.swift in Sources */,
-				ACB853AF2217168700F1653D /* GridViewController.swift in Sources */,
+				AC532AB622171C79006BBED8 /* HomeViewModel.swift in Sources */,
+				ACF1DF6622310F2D00F402E0 /* GridViewModel.swift in Sources */,
+				ACB853AF2217168700F1653D /* HomeViewController.swift in Sources */,
 				AC8A94392226B66C00A00877 /* ThirdGrid.swift in Sources */,
-				AC3DA2DB221ECE2B0041854A /* FirstGridViewModel.swift in Sources */,
-				AC83F17A222714F10063EF6F /* ImageImport.swift in Sources */,
 				AC24986721F72918002EC428 /* AppDelegate.swift in Sources */,
-				ACCF23852226A24700929F3F /* SecondGridViewModel.swift in Sources */,
 				ACCF23832226A19000929F3F /* SecondGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

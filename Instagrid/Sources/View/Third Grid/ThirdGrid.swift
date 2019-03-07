@@ -8,14 +8,9 @@
 
 import UIKit
 
-protocol ThirdGridDelegate: class {
-    func didTouchUpperLeftButtonThirdGrid()
-    func didTouchUpperRightButtonThirdGrid()
-    func didTouchBottomRightButtonThirdGrid()
-    func didTouchBottomLeftButtonThirdGrid()
-}
 
-final class ThirdGrid: UIView {
+
+final class ThirdGrid: UIView, GridType {
     
     // MARK: - Outlets
     
@@ -37,9 +32,9 @@ final class ThirdGrid: UIView {
     @IBOutlet weak var bottomLeftButton: UIButton!
     
     
-    private var viewModel: ThirdGridViewModel!
+    private var viewModel: GridViewModel!
     
-    private weak var delegate: ThirdGridDelegate?
+    private weak var delegate: GridDelegate?
     
     // MARK: - Init
     
@@ -64,7 +59,7 @@ final class ThirdGrid: UIView {
     
     // MARK: - Configure
     
-    func configure(with viewModel: ThirdGridViewModel, delegate: ThirdGridDelegate) {
+    func configure(with viewModel: GridViewModel, delegate: GridDelegate) {
         self.viewModel = viewModel
         self.delegate = delegate
         
@@ -72,18 +67,9 @@ final class ThirdGrid: UIView {
         self.viewModel.didConfigure()
     }
     
-    private func bind(to viewModel: ThirdGridViewModel) {
-        viewModel.chosenPicture = { [weak self] choice in
-            switch choice {
-            case .upperLeft:
-                self?.delegate?.didTouchUpperLeftButtonThirdGrid()
-            case .upperRight:
-                self?.delegate?.didTouchUpperRightButtonThirdGrid()
-            case .bottomLeft:
-                self?.delegate?.didTouchBottomLeftButtonThirdGrid()
-            case .bottomRight:
-                self?.delegate?.didTouchBottomRightButtonThirdGrid()
-            }
+    private func bind(to viewModel: GridViewModel) {
+        viewModel.selectedSpot = { [weak self] spot in
+           self?.delegate?.didSelect(spot: spot)
         }
     }
     
@@ -103,20 +89,8 @@ final class ThirdGrid: UIView {
     // MARK: Actions
     
     
-    @IBAction func didPressUpperLeftButton(_ sender: UIButton) {
-        viewModel.didPressUpperLeft()
-    }
-    
-    @IBAction func didPressUpperRightButton(_ sender: UIButton) {
-        viewModel.didPressBottomRight()
-    }
-    
-    @IBAction func didPressBottomRightButton(_ sender: UIButton) {
-        viewModel.didPressBottomRight()
-    }
-    
-    @IBAction func didPressBottomLeftButton(_ sender: UIButton) {
-        viewModel.didPressBottomLeft()
+    @IBAction func SelectSpot(_ sender: UIButton) {
+        viewModel.didSelectSpot(at: sender.tag)
     }
     
     

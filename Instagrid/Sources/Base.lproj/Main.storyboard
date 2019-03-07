@@ -12,7 +12,7 @@
         <!--FirstLayoutView-->
         <scene sceneID="eli-ye-CMa">
             <objects>
-                <viewController title="FirstLayoutView" id="ykT-xN-yZM" customClass="GridViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="FirstLayoutView" id="ykT-xN-yZM" customClass="HomeViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jbd-ra-JXg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,7 +63,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A6n-EG-IUj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IPg-aH-x9R"/>
+                    <navigationItem key="navigationItem" title="Instagrid" id="IPg-aH-x9R"/>
                     <connections>
                         <outlet property="firstGridButton" destination="msn-sQ-yM7" id="V15-mN-r1Q"/>
                         <outlet property="gridContainer" destination="Ihk-k3-OSe" id="Vne-a6-KzL"/>

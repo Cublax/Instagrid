@@ -8,13 +8,8 @@
 
 import UIKit
 
-protocol SecondGridDelegate: class {
-    func didTouchTopButton()
-    func didTouchBottomLeftButton()
-    func didTouchBottomRightButton()
-}
 
-final class SecondGrid: UIView {
+final class SecondGrid: UIView, GridType {
     
     
     // MARK: - Outlets
@@ -31,9 +26,9 @@ final class SecondGrid: UIView {
     @IBOutlet weak var bottomLeftButton: UIButton!
     
     
-    private var viewModel: SecondGridViewModel!
+    private var viewModel: GridViewModel!
     
-    private weak var delegate: SecondGridDelegate?
+    private weak var delegate: GridDelegate?
     
     
     // MARK: - Init
@@ -58,7 +53,7 @@ final class SecondGrid: UIView {
     
     // MARK: - Configure
     
-    func configure(with viewModel: SecondGridViewModel, delegate: SecondGridDelegate) {
+    func configure(with viewModel: GridViewModel, delegate: GridDelegate) {
         self.viewModel = viewModel
         self.delegate = delegate
         
@@ -66,16 +61,9 @@ final class SecondGrid: UIView {
         self.viewModel.didConfigure()
     }
     
-    private func bind(to viewModel: SecondGridViewModel) {
-        viewModel.chosenPicture = { [weak self] choice in
-            switch choice {
-            case .top:
-                self?.delegate?.didTouchTopButton()
-            case .bottomLeft:
-                self?.delegate?.didTouchBottomLeftButton()
-            case .bottomRight:
-                self?.delegate?.didTouchBottomRightButton()
-            }
+    private func bind(to viewModel: GridViewModel) {
+        viewModel.selectedSpot = { [weak self] spot in
+           self?.delegate?.didSelect(spot: spot)
         }
     }
     
@@ -94,17 +82,8 @@ final class SecondGrid: UIView {
     
     // MARK: - Actions
     
-    @IBAction func didPressTopButton(_ sender: UIButton) {
-        viewModel.didPressTop()
-    }
-    
-    @IBAction func didPressBottomLeftButton(_ sender: UIButton) {
-        viewModel.didPressBottomLeft()
-    }
-    
-    
-    @IBAction func didPressBottomRightButton(_ sender: UIButton) {
-        viewModel.didPressBottomRight()
+    @IBAction func selectedSpot(_ sender: UIButton) {
+        viewModel.didSelectSpot(at: sender.tag)
     }
     
 }

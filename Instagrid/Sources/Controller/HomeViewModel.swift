@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class GridViewModel {
+final class HomeViewModel {
     
     enum PictureConfiguration {
         case firstGrid, secondGrid, thirdGrid

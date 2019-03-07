@@ -34,7 +34,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
                             <connections>
-                                <action selector="didPressTopButton:" destination="-1" eventType="touchUpInside" id="p8a-MF-XT2"/>
+                                <action selector="selectedSpot:" destination="-1" eventType="touchUpInside" id="18W-v5-csL"/>
                             </connections>
                         </button>
                     </subviews>
@@ -44,12 +44,12 @@
                     <rect key="frame" x="159" y="158" width="128" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWN-gk-ENF" userLabel="Bottom Right Button">
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWN-gk-ENF" userLabel="Bottom Right Button">
                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
                             <connections>
-                                <action selector="didPressBottomRightButton:" destination="-1" eventType="touchUpInside" id="Njh-sw-uCP"/>
+                                <action selector="selectedSpot:" destination="-1" eventType="touchUpInside" id="Ksi-Ke-cU2"/>
                             </connections>
                         </button>
                     </subviews>
@@ -59,12 +59,12 @@
                     <rect key="frame" x="17" y="158" width="128" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEx-dr-9gE" userLabel="Bottom Left Button">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEx-dr-9gE" userLabel="Bottom Left Button">
                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
                             <connections>
-                                <action selector="didPressBottomLeftButton:" destination="-1" eventType="touchUpInside" id="l04-cH-Wdp"/>
+                                <action selector="selectedSpot:" destination="-1" eventType="touchUpInside" id="kVQ-H1-cs7"/>
                             </connections>
                         </button>
                     </subviews>
