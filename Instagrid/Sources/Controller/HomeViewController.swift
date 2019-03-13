@@ -65,22 +65,21 @@ final class HomeViewController: UIViewController {
                 self.gridContainer.addSubview(_currentGrid)
                 
             case .secondGrid:
-                break
-                //let grid = SecondGrid()
-                //let gridViewModel = gridViewModel()
-                //grid.configure(with: gridViewModel, delegate: self)
-                //self.gridContainer.addSubview(grid)
-                //grid.frame = self.gridContainer.bounds
-                //grid.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                self.currentGrid = SecondGrid()
+                guard let currentGrid = self.currentGrid, let _currentGrid = currentGrid as? UIView else {return}
+                let gridViewModel = GridViewModel()
+               currentGrid.configure(with: gridViewModel, delegate: self)
+                _currentGrid.frame = self.gridContainer.bounds
+                self.gridContainer.addSubview(_currentGrid)
+                
                 
             case .thirdGrid:
-                break
-                //let grid = ThirdGrid()
-                //let gridViewModel = gridViewModel()
-                //grid.configure(with: gridViewModel, delegate: self)
-                //self.gridContainer.addSubview(grid)
-                //grid.frame = self.gridContainer.bounds
-                //grid.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                self.currentGrid = ThirdGrid()
+                guard let currentGrid = self.currentGrid, let _currentGrid = currentGrid as? UIView else {return}
+                let gridViewModel = GridViewModel()
+                currentGrid.configure(with: gridViewModel, delegate: self)
+                _currentGrid.frame = self.gridContainer.bounds
+                self.gridContainer.addSubview(_currentGrid)
             }
         }
     }
