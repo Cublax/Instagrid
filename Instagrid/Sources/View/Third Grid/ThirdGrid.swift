@@ -73,12 +73,35 @@ final class ThirdGrid: UIView, GridType {
         }
     }
     
-    func set(image: UIImage) {
+    func set(image: UIImage, for spot: Spot) {
         let imageView = UIImageView(image: image)
+        switch spot {
+        case .topLeft:
+            clearSubviews(of: upperLeftButton)
+            imageView.frame = upperLeftPictureView.bounds
+            upperLeftPictureView.addSubview(imageView)
+        case .topRight:
+            clearSubviews(of: upperRightPictureView)
+            imageView.frame = upperRightPictureView.bounds
+            upperRightPictureView.addSubview(imageView)
+        case .bottomLeft:
+            clearSubviews(of: bottomLeftPictureView)
+            imageView.frame = bottomLeftPictureView.bounds
+            bottomLeftPictureView.addSubview(imageView)
+        case.bottomRight:
+            clearSubviews(of: bottomRightPictureView)
+            imageView.frame = bottomRightPictureView.bounds
+            bottomRightPictureView.addSubview(imageView)
+        default:
+            break
+        }
         imageView.frame = upperLeftPictureView.bounds
         upperLeftPictureView.addSubview(imageView)
     }
     
+    private func clearSubviews(of view: UIView) {
+        view.subviews.forEach{ $0.removeFromSuperview() }
+    }
     
     // MARK: View life cycle
     

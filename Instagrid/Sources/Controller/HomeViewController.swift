@@ -11,7 +11,7 @@ import UIKit
 
 
 protocol GridType: class {
-    func set(image: UIImage)
+    func set(image: UIImage, for spot: Spot)
     func configure(with viewModelType: GridViewModel, delegate: GridDelegate)
 }
 
@@ -36,7 +36,14 @@ final class HomeViewController: UIViewController {
         return pickerController
     }()
     
-    private var currentGrid: GridType?
+    private var currentGrid: GridType? {
+        didSet {
+            let viewModel = GridViewModel()
+            self.currentGrid?.configure(with: viewModel, delegate: self)
+        }
+    }
+    
+    private var currentSpot: Spot?
     
     // MARK: - View life cycle
     
@@ -57,31 +64,24 @@ final class HomeViewController: UIViewController {
             switch choice {
                 
             case .firstGrid:
-                self.currentGrid = FirstGrid()
-                guard let currentGrid = self.currentGrid, let _currentGrid = currentGrid as? UIView else { return }
-                let gridViewModel = GridViewModel()
-                currentGrid.configure(with: gridViewModel, delegate: self)
-                _currentGrid.frame = self.gridContainer.bounds
-                self.gridContainer.addSubview(_currentGrid)
-                
+                let gridType = FirstGrid()
+                self.configureContainer(for: gridType)
             case .secondGrid:
-                self.currentGrid = SecondGrid()
-                guard let currentGrid = self.currentGrid, let _currentGrid = currentGrid as? UIView else {return}
-                let gridViewModel = GridViewModel()
-               currentGrid.configure(with: gridViewModel, delegate: self)
-                _currentGrid.frame = self.gridContainer.bounds
-                self.gridContainer.addSubview(_currentGrid)
-                
-                
+                let gridType = SecondGrid()
+                self.configureContainer(for: gridType)
             case .thirdGrid:
-                self.currentGrid = ThirdGrid()
-                guard let currentGrid = self.currentGrid, let _currentGrid = currentGrid as? UIView else {return}
-                let gridViewModel = GridViewModel()
-                currentGrid.configure(with: gridViewModel, delegate: self)
-                _currentGrid.frame = self.gridContainer.bounds
-                self.gridContainer.addSubview(_currentGrid)
+                let gridType = ThirdGrid()
+                self.configureContainer(for: gridType)
             }
         }
+    }
+    
+    private func configureContainer(for grid: GridType) {
+        self.currentGrid = grid
+        guard let gridView = grid as? UIView else { return }
+        self.gridContainer.subviews.forEach { $0.removeFromSuperview() }
+        gridView.frame = self.gridContainer.bounds
+        self.gridContainer.addSubview(gridView)
     }
     
     
@@ -105,32 +105,16 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: GridDelegate {
     func didSelect(spot: Spot) {
-        switch spot {
-        case .top:
-            break
-        case .topLeft:
-            break
-        case .topRight:
-            break
-        case .bottomLeft:
-            break
-        case .bottomRight:
-            break
-        case .bottom:
-            break
-        }
-        
-        // Finaliser le code pour savoir quelle est l'image qui doit recevoir la photo selectionnée dans le controlleur.
+        self.currentSpot = spot
         self.show(pickerController, sender: nil)
     }
-    }
-
+}
 
 
 extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-             self.currentGrid?.set(image: image)
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage, let spot = currentSpot {
+            self.currentGrid?.set(image: image, for: spot)
         }
         self.dismiss(animated: true, completion: nil)
     }

@@ -64,10 +64,29 @@ final class FirstGrid: UIView, GridType {
         }
     }
     
-    func set(image: UIImage) {
+    func set(image: UIImage, for spot: Spot) {
         let imageView = UIImageView(image: image)
-        imageView.frame = upperLeftPictureView.bounds
-        upperLeftPictureView.addSubview(imageView)
+        switch spot {
+        case .topLeft:
+            clearSubviews(of: upperLeftPictureView)
+            imageView.frame = upperLeftPictureView.bounds
+            upperLeftPictureView.addSubview(imageView)
+        case .topRight:
+            clearSubviews(of: upperRightPictureView)
+            imageView.frame = upperRightPictureView.bounds
+            upperRightPictureView.addSubview(imageView)
+        case .bottom:
+            clearSubviews(of: bottomPictureView)
+            imageView.frame = bottomPictureView.bounds
+            bottomPictureView.addSubview(imageView)
+        default:
+            break
+        }
+    
+    }
+    
+    private func clearSubviews(of view: UIView) {
+        view.subviews.forEach{ $0.removeFromSuperview() }
     }
     
     // MARK: - View life cycle
