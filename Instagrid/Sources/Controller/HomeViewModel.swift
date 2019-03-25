@@ -21,14 +21,23 @@ final class HomeViewModel {
     
     // MARK: - Output
     
+    
     var titleText: ((String) -> Void)?
+    
+    var directionText: ((String) -> Void)?
+    
+    var swipeDirectionText: ((String) -> Void)?
+    
     var selectedConfiguration: ((PictureConfiguration) -> Void)?
     
     
     // MARK: - Input
     
     func viewDidLoad() {
-
+        titleText?("Instagrid")
+        directionText?("^")
+        swipeDirectionText?("swipe-up")
+        
     }
     
     func didPressFirstGrid() {
@@ -43,4 +52,15 @@ final class HomeViewModel {
     func didPressThirdGrid() {
         selectedConfiguration?(.thirdGrid)
     }
+    
+    func didChangeToCompact() {
+        directionText?("^")
+        swipeDirectionText?("swipe-up to share")
+    }
+    
+    func didChangeToRegular() {
+        directionText?("<")
+        swipeDirectionText?("swipe-left")
+    }
+    
 }

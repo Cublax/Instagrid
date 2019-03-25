@@ -21,6 +21,27 @@ final class HomeViewController: UIViewController {
     
     // MARK: - Properties
     
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.font = UIFont(name: "ThirstySoftRegular", size: 30.0)
+            titleLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        }
+    }
+    
+    @IBOutlet weak var directionLabel: UILabel! {
+        didSet {
+            directionLabel.font = UIFont(name: "Arial", size: 50.0)
+            directionLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        }
+    }
+    
+    @IBOutlet weak var swipeDirectionLabel: UILabel! {
+        didSet {
+            swipeDirectionLabel.font = UIFont(name: "Delm-Medium", size: 25.0)
+            swipeDirectionLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        }
+    }
+    
     @IBOutlet weak var gridContainer: UIView!
     @IBOutlet weak var firstGridButton: UIButton!
     @IBOutlet weak var secondGridButton: UIButton!
@@ -47,6 +68,15 @@ final class HomeViewController: UIViewController {
     
     // MARK: - View life cycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bind(to: viewModel)
@@ -56,7 +86,7 @@ final class HomeViewController: UIViewController {
     private func bind(to viewModel: HomeViewModel) {
         
         viewModel.titleText = { [weak self] text in
-            self?.title = text
+            self?.titleLabel.text = text
         }
         
         viewModel.selectedConfiguration = { [weak self] choice in
@@ -74,6 +104,14 @@ final class HomeViewController: UIViewController {
                 self.configureContainer(for: gridType)
             }
         }
+        
+        viewModel.swipeDirectionText = { [weak self] text in
+            self?.swipeDirectionLabel.text = text
+        }
+        
+        viewModel.directionText = { [weak self] text in
+            self?.directionLabel.text = text
+        }
     }
     
     private func configureContainer(for grid: GridType) {
@@ -84,6 +122,14 @@ final class HomeViewController: UIViewController {
         self.gridContainer.addSubview(gridView)
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.horizontalSizeClass == .compact {
+            viewModel.didChangeToCompact()
+        } else {
+            viewModel.didChangeToRegular()
+        }
+    }
     
     
     // MARK: - Actions
