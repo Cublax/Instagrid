@@ -53,6 +53,10 @@ final class HomeViewModel {
         selectedConfiguration?(.thirdGrid)
     }
     
+    func didSwipe() {
+        
+    }
+    
     func didChangeToCompact() {
         directionText?("^")
         swipeDirectionText?("swipe-up to share")

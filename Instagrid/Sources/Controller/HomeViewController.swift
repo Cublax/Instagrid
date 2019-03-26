@@ -146,6 +146,11 @@ final class HomeViewController: UIViewController {
         viewModel.didPressThirdGrid()
     }
     
+    @IBAction func didSwipeGrid(_ sender: UISwipeGestureRecognizer) {
+        viewModel.didSwipe()
+    }
+    
+    
 }
 
 
