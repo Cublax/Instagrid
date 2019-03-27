@@ -71,15 +71,15 @@ final class SecondGrid: UIView, GridType {
         let imageView = UIImageView(image: image)
         switch spot {
         case .top:
-            clearSubviews(of: topPictureView)
+            topPictureView.removeAllSubviews()
             imageView.frame = topPictureView.bounds
             topPictureView.addSubview(imageView)
         case .bottomLeft:
-            clearSubviews(of: bottomLeftPictureView)
+            bottomLeftPictureView.removeAllSubviews()
             imageView.frame = bottomLeftPictureView.bounds
             bottomLeftPictureView.addSubview(imageView)
         case .bottomRight:
-            clearSubviews(of: bottomRightPictureView)
+            bottomRightPictureView.removeAllSubviews()
             imageView.frame = bottomRightPictureView.bounds
             bottomRightPictureView.addSubview(imageView)
         default:
@@ -87,9 +87,6 @@ final class SecondGrid: UIView, GridType {
         }
     }
     
-    private func clearSubviews(of view: UIView) {
-        view.subviews.forEach{ $0.removeFromSuperview() }
-    }
     
     // MARK: - View life cycle
     

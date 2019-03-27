@@ -23,6 +23,7 @@
 		ACB853AF2217168700F1653D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB853AE2217168700F1653D /* HomeViewController.swift */; };
 		ACCF23832226A19000929F3F /* SecondGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCF23822226A19000929F3F /* SecondGrid.swift */; };
 		ACF1DF6622310F2D00F402E0 /* GridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1DF6522310F2D00F402E0 /* GridViewModel.swift */; };
+		ACFF0F00224B918500E11932 /* UIKit + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFF0EFF224B918500E11932 /* UIKit + UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		ACB853AE2217168700F1653D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ACCF23822226A19000929F3F /* SecondGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondGrid.swift; path = "Instagrid/Sources/View/Second Grid/SecondGrid.swift"; sourceTree = SOURCE_ROOT; };
 		ACF1DF6522310F2D00F402E0 /* GridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewModel.swift; sourceTree = "<group>"; };
+		ACFF0EFF224B918500E11932 /* UIKit + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit + UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				AC7C72A921FF18F700FA0CE0 /* Model */,
 				AC7C72A721FF18E500FA0CE0 /* Controller */,
 				AC7C72A821FF18EF00FA0CE0 /* View */,
+				ACFF0F01224B919600E11932 /* Utils */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -188,6 +191,14 @@
 				AC8A94382226B66C00A00877 /* ThirdGrid.swift */,
 			);
 			path = "Third Grid";
+			sourceTree = "<group>";
+		};
+		ACFF0F01224B919600E11932 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ACFF0EFF224B918500E11932 /* UIKit + UIView.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC3DA2D9221ECE190041854A /* FirstGrid.swift in Sources */,
+				ACFF0F00224B918500E11932 /* UIKit + UIView.swift in Sources */,
 				AC532AB622171C79006BBED8 /* HomeViewModel.swift in Sources */,
 				ACF1DF6622310F2D00F402E0 /* GridViewModel.swift in Sources */,
 				ACB853AF2217168700F1653D /* HomeViewController.swift in Sources */,

@@ -33,11 +33,11 @@ final class HomeViewModel {
     
     // MARK: - Input
     
-    func viewDidLoad() {
+    func viewDidAppear() {
         titleText?("Instagrid")
         directionText?("^")
         swipeDirectionText?("swipe-up")
-        
+        selectedConfiguration?(.firstGrid)
     }
     
     func didPressFirstGrid() {
@@ -54,7 +54,7 @@ final class HomeViewModel {
     }
     
     func didSwipe() {
-        
+  
     }
     
     func didChangeToCompact() {

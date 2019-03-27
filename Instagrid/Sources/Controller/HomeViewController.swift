@@ -77,10 +77,10 @@ final class HomeViewController: UIViewController {
         return true
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         bind(to: viewModel)
-        viewModel.viewDidLoad()
+        viewModel.viewDidAppear()
     }
     
     private func bind(to viewModel: HomeViewModel) {
@@ -124,7 +124,7 @@ final class HomeViewController: UIViewController {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        if traitCollection.horizontalSizeClass == .compact {
+        if traitCollection.horizontalSizeClass == .compact && UIDevice.current.orientation == .portrait {
             viewModel.didChangeToCompact()
         } else {
             viewModel.didChangeToRegular()
@@ -148,6 +148,7 @@ final class HomeViewController: UIViewController {
     
     @IBAction func didSwipeGrid(_ sender: UISwipeGestureRecognizer) {
         viewModel.didSwipe()
+        
     }
     
     
