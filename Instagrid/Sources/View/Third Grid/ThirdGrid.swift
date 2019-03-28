@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 final class ThirdGrid: UIView, GridType {
     
     // MARK: - Outlets
@@ -19,25 +17,20 @@ final class ThirdGrid: UIView, GridType {
     @IBOutlet weak var upperLeftPictureView: UIView!
     @IBOutlet weak var upperLeftButton: UIButton!
     
-    
     @IBOutlet weak var upperRightPictureView: UIView!
     @IBOutlet weak var upperRightButton: UIButton!
-    
     
     @IBOutlet weak var bottomRightPictureView: UIView!
     @IBOutlet weak var bottomRightButton: UIButton!
     
-    
     @IBOutlet weak var bottomLeftPictureView: UIView!
     @IBOutlet weak var bottomLeftButton: UIButton!
-    
     
     private var viewModel: GridViewModel!
     
     private weak var delegate: GridDelegate?
     
     // MARK: - Init
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,7 +48,6 @@ final class ThirdGrid: UIView, GridType {
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
-
     
     // MARK: - Configure
     
@@ -64,12 +56,11 @@ final class ThirdGrid: UIView, GridType {
         self.delegate = delegate
         
         bind(to: self.viewModel)
-        self.viewModel.didConfigure()
     }
     
     private func bind(to viewModel: GridViewModel) {
         viewModel.selectedSpot = { [weak self] spot in
-           self?.delegate?.didSelect(spot: spot)
+            self?.delegate?.didSelect(spot: spot)
         }
     }
     
@@ -81,7 +72,7 @@ final class ThirdGrid: UIView, GridType {
             imageView.frame = upperLeftPictureView.bounds
             upperLeftPictureView.addSubview(imageView)
         case .topRight:
-           upperRightPictureView.removeAllSubviews()
+            upperRightPictureView.removeAllSubviews()
             imageView.frame = upperRightPictureView.bounds
             upperRightPictureView.addSubview(imageView)
         case .bottomLeft:
@@ -99,19 +90,9 @@ final class ThirdGrid: UIView, GridType {
         upperLeftPictureView.addSubview(imageView)
     }
     
-    
-    // MARK: View life cycle
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    
     // MARK: Actions
-    
     
     @IBAction func SelectSpot(_ sender: UIButton) {
         viewModel.didSelectSpot(at: sender.tag)
     }
-    
-    
 }

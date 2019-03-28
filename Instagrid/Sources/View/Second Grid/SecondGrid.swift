@@ -6,11 +6,10 @@
 //  Copyright © 2019 Alexandre Quiblier. All rights reserved.
 //
 
+
 import UIKit
 
-
 final class SecondGrid: UIView, GridType {
-    
     
     // MARK: - Outlets
     
@@ -25,14 +24,11 @@ final class SecondGrid: UIView, GridType {
     @IBOutlet weak var bottomLeftPictureView: UIView!
     @IBOutlet weak var bottomLeftButton: UIButton!
     
-    
     private var viewModel: GridViewModel!
     
     private weak var delegate: GridDelegate?
     
-    
     // MARK: - Init
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,12 +54,11 @@ final class SecondGrid: UIView, GridType {
         self.delegate = delegate
         
         bind(to: self.viewModel)
-        self.viewModel.didConfigure()
     }
     
     private func bind(to viewModel: GridViewModel) {
         viewModel.selectedSpot = { [weak self] spot in
-           self?.delegate?.didSelect(spot: spot)
+            self?.delegate?.didSelect(spot: spot)
         }
     }
     
@@ -87,17 +82,9 @@ final class SecondGrid: UIView, GridType {
         }
     }
     
-    
-    // MARK: - View life cycle
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    
     // MARK: - Actions
     
     @IBAction func selectedSpot(_ sender: UIButton) {
         viewModel.didSelectSpot(at: sender.tag)
     }
-    
 }

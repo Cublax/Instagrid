@@ -8,15 +8,13 @@
 
 import Foundation
 
-
 protocol GridDelegate: class {
     func didSelect(spot: Spot)
 }
 
-
 enum Spot: Int, CaseIterable {
     case top = 0
-    case topLeft 
+    case topLeft
     case topRight
     case bottomLeft
     case bottomRight
@@ -25,20 +23,14 @@ enum Spot: Int, CaseIterable {
 
 final class GridViewModel {
     
-    // MARK: - Properties
-    
     // MARK: - Outputs
     
     var selectedSpot: ((Spot) -> Void)?
-    // MARK: - Intputs
     
-    func didConfigure() {
-        
-    }
+    // MARK: - Intputs
     
     func didSelectSpot(at index: Int) {
         guard let spot = Spot(rawValue: index) else {return}
         selectedSpot?(spot)
     }
-    
 }

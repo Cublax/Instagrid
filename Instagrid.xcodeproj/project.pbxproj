@@ -10,7 +10,6 @@
 		AC24986721F72918002EC428 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC24986621F72918002EC428 /* AppDelegate.swift */; };
 		AC24986E21F72919002EC428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC24986D21F72919002EC428 /* Assets.xcassets */; };
 		AC24987121F72919002EC428 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC24986F21F72919002EC428 /* LaunchScreen.storyboard */; };
-		AC24987C21F72919002EC428 /* InstagridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC24987B21F72919002EC428 /* InstagridTests.swift */; };
 		AC24988A21F72B13002EC428 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC24988921F72B13002EC428 /* ThirstySoftRegular.otf */; };
 		AC24988C21F72B3A002EC428 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC24988B21F72B3A002EC428 /* Delm-Medium.otf */; };
 		AC3DA2D9221ECE190041854A /* FirstGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3DA2D8221ECE190041854A /* FirstGrid.swift */; };
@@ -21,6 +20,7 @@
 		AC8A94372226B48900A00877 /* ThirdGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8A94362226B48900A00877 /* ThirdGrid.xib */; };
 		AC8A94392226B66C00A00877 /* ThirdGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8A94382226B66C00A00877 /* ThirdGrid.swift */; };
 		ACB853AF2217168700F1653D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB853AE2217168700F1653D /* HomeViewController.swift */; };
+		ACC94D84224D0482007BA6B5 /* GridViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC94D83224D0482007BA6B5 /* GridViewModelTests.swift */; };
 		ACCF23832226A19000929F3F /* SecondGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCF23822226A19000929F3F /* SecondGrid.swift */; };
 		ACF1DF6622310F2D00F402E0 /* GridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1DF6522310F2D00F402E0 /* GridViewModel.swift */; };
 		ACFF0F00224B918500E11932 /* UIKit + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFF0EFF224B918500E11932 /* UIKit + UIView.swift */; };
@@ -44,7 +44,6 @@
 		AC24987021F72919002EC428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC24987221F72919002EC428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC24987721F72919002EC428 /* InstagridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagridTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC24987B21F72919002EC428 /* InstagridTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagridTests.swift; sourceTree = "<group>"; };
 		AC24987D21F72919002EC428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC24988921F72B13002EC428 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		AC24988B21F72B3A002EC428 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		AC8A94362226B48900A00877 /* ThirdGrid.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdGrid.xib; sourceTree = "<group>"; };
 		AC8A94382226B66C00A00877 /* ThirdGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdGrid.swift; sourceTree = "<group>"; };
 		ACB853AE2217168700F1653D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		ACC94D83224D0482007BA6B5 /* GridViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewModelTests.swift; sourceTree = "<group>"; };
 		ACCF23822226A19000929F3F /* SecondGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondGrid.swift; path = "Instagrid/Sources/View/Second Grid/SecondGrid.swift"; sourceTree = SOURCE_ROOT; };
 		ACF1DF6522310F2D00F402E0 /* GridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewModel.swift; sourceTree = "<group>"; };
 		ACFF0EFF224B918500E11932 /* UIKit + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit + UIView.swift"; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				AC24987D21F72919002EC428 /* Info.plist */,
-				AC24987B21F72919002EC428 /* InstagridTests.swift */,
+				ACC94D83224D0482007BA6B5 /* GridViewModelTests.swift */,
 			);
 			path = InstagridTests;
 			sourceTree = "<group>";
@@ -315,6 +315,7 @@
 				AC8A94392226B66C00A00877 /* ThirdGrid.swift in Sources */,
 				AC24986721F72918002EC428 /* AppDelegate.swift in Sources */,
 				ACCF23832226A19000929F3F /* SecondGrid.swift in Sources */,
+				ACC94D84224D0482007BA6B5 /* GridViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +323,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC24987C21F72919002EC428 /* InstagridTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

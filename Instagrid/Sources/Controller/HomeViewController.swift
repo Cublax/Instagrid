@@ -8,18 +8,14 @@
 
 import UIKit
 
-
-
 protocol GridType: class {
     func set(image: UIImage, for spot: Spot)
     func configure(with viewModelType: GridViewModel, delegate: GridDelegate)
 }
 
-
-
 final class HomeViewController: UIViewController {
     
-    // MARK: - Properties
+    // MARK: - Outlets
     
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
@@ -47,14 +43,28 @@ final class HomeViewController: UIViewController {
     @IBOutlet weak var secondGridButton: UIButton!
     @IBOutlet weak var thirdGridButton: UIButton!
     
+    // MARK: - Private properties
+    
     private lazy var viewModel = HomeViewModel()
     
     private lazy var pickerController: UIImagePickerController = {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
-        pickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
+        pickerController.sourceType = .photoLibrary
         pickerController.allowsEditing = false
         return pickerController
+    }()
+    
+    private lazy var leftSwipeGestureRecognizer: UISwipeGestureRecognizer = {
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(addSwipeGesture(_:)))
+        swipeGesture.direction = .left
+        return swipeGesture
+    }()
+    
+    private lazy var upSwipeGestureRecognizer: UISwipeGestureRecognizer = {
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(addSwipeGesture(_:)))
+        swipeGesture.direction = .up
+        return swipeGesture
     }()
     
     private var currentGrid: GridType? {
@@ -77,10 +87,13 @@ final class HomeViewController: UIViewController {
         return true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        gridContainer.addGestureRecognizer(leftSwipeGestureRecognizer)
+        
         bind(to: viewModel)
-        viewModel.viewDidAppear()
+        viewModel.viewDidLoad()
     }
     
     private func bind(to viewModel: HomeViewModel) {
@@ -114,23 +127,44 @@ final class HomeViewController: UIViewController {
         }
     }
     
+    // MARK: - Helpers
+    
+    @objc func addSwipeGesture(_ sender: UISwipeGestureRecognizer) {
+        UIView.transition(with: gridContainer,
+                          duration: 0.5,
+                          options: sender.direction == .left ? [.transitionFlipFromLeft] : [.transitionCurlUp],
+                          animations: {},
+                          completion: { [weak self] _ in self?.displayAC() })
+    }
+    
+    private func displayAC() {
+        let activityVC = UIActivityViewController(activityItems: ["Insert grid here"], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = self.view
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    
     private func configureContainer(for grid: GridType) {
         self.currentGrid = grid
         guard let gridView = grid as? UIView else { return }
-        self.gridContainer.subviews.forEach { $0.removeFromSuperview() }
+        self.gridContainer.removeAllSubviews()
+        self.gridContainer.layoutIfNeeded()
         gridView.frame = self.gridContainer.bounds
         self.gridContainer.addSubview(gridView)
     }
     
+    // MARK: - Trait Collection
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
+        gridContainer.gestureRecognizers?.removeAll()
         if traitCollection.horizontalSizeClass == .compact && UIDevice.current.orientation == .portrait {
+            gridContainer.addGestureRecognizer(upSwipeGestureRecognizer)
             viewModel.didChangeToCompact()
         } else {
+            gridContainer.addGestureRecognizer(leftSwipeGestureRecognizer)
             viewModel.didChangeToRegular()
         }
     }
-    
     
     // MARK: - Actions
     
@@ -145,15 +179,7 @@ final class HomeViewController: UIViewController {
     @IBAction func didPressThirdGridButton(_ sender: UIButton) {
         viewModel.didPressThirdGrid()
     }
-    
-    @IBAction func didSwipeGrid(_ sender: UISwipeGestureRecognizer) {
-        viewModel.didSwipe()
-        
-    }
-    
-    
 }
-
 
 extension HomeViewController: GridDelegate {
     func didSelect(spot: Spot) {
@@ -161,7 +187,6 @@ extension HomeViewController: GridDelegate {
         self.show(pickerController, sender: nil)
     }
 }
-
 
 extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

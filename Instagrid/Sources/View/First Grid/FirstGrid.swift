@@ -24,7 +24,6 @@ final class FirstGrid: UIView, GridType {
     @IBOutlet weak var bottomPictureView: UIView!
     @IBOutlet weak var bottomButton: UIButton!
     
-    
     private var viewModel: GridViewModel!
     
     private weak var delegate: GridDelegate?
@@ -47,7 +46,7 @@ final class FirstGrid: UIView, GridType {
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
-
+    
     // MARK: - Configure
     
     func configure(with viewModel: GridViewModel, delegate: GridDelegate) {
@@ -55,7 +54,6 @@ final class FirstGrid: UIView, GridType {
         self.delegate = delegate
         
         bind(to: self.viewModel)
-        self.viewModel.didConfigure()
     }
     
     private func bind(to viewModel: GridViewModel) {
@@ -82,20 +80,11 @@ final class FirstGrid: UIView, GridType {
         default:
             break
         }
-    
-    }
-    
-    
-    // MARK: - View life cycle
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
     }
     
     // MARK: - Actions
     
     @IBAction func selectedSpot(_ sender: UIButton) {
-       viewModel.didSelectSpot(at: sender.tag)
-}
-
+        viewModel.didSelectSpot(at: sender.tag)
+    }
 }
