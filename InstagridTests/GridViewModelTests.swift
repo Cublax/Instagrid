@@ -6,7 +6,6 @@
 //  Copyright © 2019 Alexandre Quiblier. All rights reserved.
 //
 
-
 @testable import Instagrid
 import XCTest
 
@@ -112,3 +111,4 @@ final class GridViewModelTests: XCTestCase {
         waitForExpectations(timeout: 1.0, handler: nil)
     }
 }
+

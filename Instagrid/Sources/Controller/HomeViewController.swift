@@ -17,31 +17,31 @@ final class HomeViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var titleLabel: UILabel! {
+    @IBOutlet private weak var titleLabel: UILabel! {
         didSet {
             titleLabel.font = UIFont(name: "ThirstySoftRegular", size: 30.0)
             titleLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         }
     }
     
-    @IBOutlet weak var directionLabel: UILabel! {
+    @IBOutlet private weak var directionLabel: UILabel! {
         didSet {
             directionLabel.font = UIFont(name: "Arial", size: 50.0)
             directionLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         }
     }
     
-    @IBOutlet weak var swipeDirectionLabel: UILabel! {
+    @IBOutlet private weak var swipeDirectionLabel: UILabel! {
         didSet {
             swipeDirectionLabel.font = UIFont(name: "Delm-Medium", size: 25.0)
             swipeDirectionLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         }
     }
     
-    @IBOutlet weak var gridContainer: UIView!
-    @IBOutlet weak var firstGridButton: UIButton!
-    @IBOutlet weak var secondGridButton: UIButton!
-    @IBOutlet weak var thirdGridButton: UIButton!
+    @IBOutlet private weak var gridContainer: UIView!
+    @IBOutlet private weak var firstGridButton: UIButton!
+    @IBOutlet private weak var secondGridButton: UIButton!
+    @IBOutlet private weak var thirdGridButton: UIButton!
     
     // MARK: - Private properties
     
@@ -89,9 +89,6 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Ne sert vraissemblabment a rien car instancié dans la methonde traitCollectionDidChange
-        //gridContainer.addGestureRecognizer(leftSwipeGestureRecognizer)
-        
         
         bind(to: viewModel)
         viewModel.viewDidLoad()
@@ -106,7 +103,6 @@ final class HomeViewController: UIViewController {
         viewModel.selectedConfiguration = { [weak self] choice in
             guard let self = self else { return }
             switch choice {
-                
             case .firstGrid:
                 let gridType = FirstGrid()
                 self.configureContainer(for: gridType)
@@ -139,7 +135,6 @@ final class HomeViewController: UIViewController {
     }
     
     private func sharePicture() {
-        
         UIGraphicsBeginImageContext(gridContainer.frame.size)
         gridContainer.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -147,10 +142,7 @@ final class HomeViewController: UIViewController {
         let activityVC = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = self.view
         self.present(activityVC, animated: true, completion: nil)
-      
     }
-    
-  
     
     private func configureContainer(for grid: GridType) {
         self.currentGrid = grid
@@ -166,7 +158,7 @@ final class HomeViewController: UIViewController {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         gridContainer.gestureRecognizers?.removeAll()
-        if traitCollection.horizontalSizeClass == .compact && UIDevice.current.orientation == .portrait {
+        if traitCollection.horizontalSizeClass == .compact, UIDevice.current.orientation == .portrait {
             gridContainer.addGestureRecognizer(upSwipeGestureRecognizer)
             viewModel.didChangeToCompact()
         } else {
@@ -190,6 +182,7 @@ final class HomeViewController: UIViewController {
     }
 }
 
+// MARK: - GridDelagate
 extension HomeViewController: GridDelegate {
     func didSelect(spot: Spot) {
         self.currentSpot = spot
@@ -197,8 +190,10 @@ extension HomeViewController: GridDelegate {
     }
 }
 
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
 extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage, let spot = currentSpot {
             self.currentGrid?.set(image: image, for: spot)
         }

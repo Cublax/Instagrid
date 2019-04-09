@@ -66,7 +66,7 @@ final class HomeViewModelTests: XCTestCase {
         
         waitForExpectations(timeout: 1.0, handler: nil)
     }
- 
+    
     func testGivenHomeViewModel_WhenDidPressFirstGrid_ThenSelectedConfiguration() {
         let viewModel = HomeViewModel()
         let expectation = self.expectation(description: "returned configuration")
@@ -76,8 +76,8 @@ final class HomeViewModelTests: XCTestCase {
             if counter == 1 {
                 XCTAssertEqual(configuration, .firstGrid)
                 expectation.fulfill()
-        }
-        counter += 1
+            }
+            counter += 1
         }
         
         viewModel.viewDidLoad()
@@ -134,8 +134,8 @@ final class HomeViewModelTests: XCTestCase {
         var counter = 0
         viewModel.directionText = { directionText in
             if counter == 1 {
-            XCTAssertEqual(directionText, "^")
-            expectation.fulfill()
+                XCTAssertEqual(directionText, "^")
+                expectation.fulfill()
             }
             counter += 1
         }
@@ -207,5 +207,6 @@ final class HomeViewModelTests: XCTestCase {
         waitForExpectations(timeout: 1.0, handler: nil)
     }
 }
+
 
 

@@ -27,97 +27,126 @@
             <rect key="frame" x="0.0" y="0.0" width="305" height="306"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12e-u4-3lX" userLabel="Upper Left Picture View">
-                    <rect key="frame" x="16" y="16" width="134" height="133"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="q8F-gU-UND">
+                    <rect key="frame" x="16" y="16" width="273" height="274"/>
                     <subviews>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnT-LX-U7A" userLabel="Upper Left Button">
-                            <rect key="frame" x="0.0" y="0.0" width="132" height="133"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
-                            <state key="normal" title="+"/>
-                            <connections>
-                                <action selector="SelectSpot:" destination="-1" eventType="touchUpInside" id="ZfN-BS-fSe"/>
-                            </connections>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ITx-wS-HQx">
+                            <rect key="frame" x="0.0" y="0.0" width="273" height="129"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12e-u4-3lX" userLabel="Upper Left Picture View">
+                                    <rect key="frame" x="0.0" y="0.0" width="128.5" height="129"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnT-LX-U7A" userLabel="Upper Left Button">
+                                            <rect key="frame" x="0.0" y="0.0" width="126.5" height="129"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                                            <state key="normal" title="+"/>
+                                            <connections>
+                                                <action selector="SelectSpot:" destination="-1" eventType="touchUpInside" id="ZfN-BS-fSe"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="SnT-LX-U7A" secondAttribute="bottom" id="XZI-1b-se8"/>
+                                        <constraint firstAttribute="trailing" secondItem="SnT-LX-U7A" secondAttribute="trailing" constant="2" id="Xjg-0K-Whs"/>
+                                        <constraint firstItem="SnT-LX-U7A" firstAttribute="top" secondItem="12e-u4-3lX" secondAttribute="top" id="aPr-bm-wbE"/>
+                                        <constraint firstItem="SnT-LX-U7A" firstAttribute="leading" secondItem="12e-u4-3lX" secondAttribute="leading" id="bJm-mr-VpI"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yck-u3-cj2" userLabel="Upper  Right Picture View">
+                                    <rect key="frame" x="144.5" y="0.0" width="128.5" height="129"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCU-GC-YeF" userLabel="Upper Right Button">
+                                            <rect key="frame" x="0.0" y="0.0" width="130.5" height="129"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                                            <state key="normal" title="+"/>
+                                            <connections>
+                                                <action selector="SelectSpot:" destination="-1" eventType="touchUpInside" id="dD7-5a-xV5"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="HCU-GC-YeF" firstAttribute="leading" secondItem="yck-u3-cj2" secondAttribute="leading" id="6zH-My-BcX"/>
+                                        <constraint firstAttribute="trailing" secondItem="HCU-GC-YeF" secondAttribute="trailing" constant="-2" id="7rf-o6-gRJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="HCU-GC-YeF" secondAttribute="bottom" id="Tcm-Xf-KEf"/>
+                                        <constraint firstItem="HCU-GC-YeF" firstAttribute="top" secondItem="yck-u3-cj2" secondAttribute="top" id="gSt-FY-awH"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="yck-u3-cj2" firstAttribute="height" secondItem="12e-u4-3lX" secondAttribute="height" id="a9R-YD-Zbs"/>
+                                <constraint firstItem="yck-u3-cj2" firstAttribute="width" secondItem="12e-u4-3lX" secondAttribute="width" id="vni-gh-l9I"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yZz-ok-sBH">
+                            <rect key="frame" x="0.0" y="145" width="273" height="129"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXT-3T-kHV" userLabel="Bottom Left Picture View">
+                                    <rect key="frame" x="0.0" y="0.0" width="128.5" height="129"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yW-h2-eIe" userLabel="Bottom Left Button">
+                                            <rect key="frame" x="0.0" y="0.0" width="125.5" height="129"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                                            <state key="normal" title="+"/>
+                                            <connections>
+                                                <action selector="SelectSpot:" destination="-1" eventType="touchUpInside" id="gZ1-q5-frv"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="3yW-h2-eIe" firstAttribute="leading" secondItem="wXT-3T-kHV" secondAttribute="leading" id="WLx-AD-z6z"/>
+                                        <constraint firstItem="3yW-h2-eIe" firstAttribute="top" secondItem="wXT-3T-kHV" secondAttribute="top" id="etL-4V-WcO"/>
+                                        <constraint firstAttribute="trailing" secondItem="3yW-h2-eIe" secondAttribute="trailing" constant="3" id="km8-vq-HNE"/>
+                                        <constraint firstAttribute="bottom" secondItem="3yW-h2-eIe" secondAttribute="bottom" id="zsQ-CL-os8"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gg8-By-D3g" userLabel="Bottom Right Picture View">
+                                    <rect key="frame" x="144.5" y="0.0" width="128.5" height="129"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBQ-C9-tmO" userLabel="Bottom Right Button">
+                                            <rect key="frame" x="0.0" y="0.0" width="128.5" height="129"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                                            <state key="normal" title="+"/>
+                                            <connections>
+                                                <action selector="SelectSpot:" destination="-1" eventType="touchUpInside" id="WkE-d6-02Z"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="KBQ-C9-tmO" secondAttribute="trailing" id="5N9-F9-EgG"/>
+                                        <constraint firstAttribute="bottom" secondItem="KBQ-C9-tmO" secondAttribute="bottom" id="Sfh-By-PvG"/>
+                                        <constraint firstItem="KBQ-C9-tmO" firstAttribute="leading" secondItem="gg8-By-D3g" secondAttribute="leading" id="XCK-ax-FTc"/>
+                                        <constraint firstItem="KBQ-C9-tmO" firstAttribute="top" secondItem="gg8-By-D3g" secondAttribute="top" id="q1j-n8-o7b"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="gg8-By-D3g" firstAttribute="width" secondItem="wXT-3T-kHV" secondAttribute="width" id="XEr-e0-iOY"/>
+                                <constraint firstItem="gg8-By-D3g" firstAttribute="height" secondItem="wXT-3T-kHV" secondAttribute="height" id="wn3-ML-pXF"/>
+                            </constraints>
+                        </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="12e-u4-3lX" secondAttribute="height" multiplier="134:133" id="G6P-dx-6tm"/>
+                        <constraint firstItem="ITx-wS-HQx" firstAttribute="top" secondItem="q8F-gU-UND" secondAttribute="top" id="Aef-T3-oqI"/>
+                        <constraint firstItem="yZz-ok-sBH" firstAttribute="width" secondItem="ITx-wS-HQx" secondAttribute="width" id="CvZ-bE-9oO"/>
+                        <constraint firstItem="yZz-ok-sBH" firstAttribute="leading" secondItem="q8F-gU-UND" secondAttribute="leading" id="Dmn-Hr-ec2"/>
+                        <constraint firstAttribute="trailing" secondItem="ITx-wS-HQx" secondAttribute="trailing" id="GfZ-Ba-zga"/>
+                        <constraint firstAttribute="trailing" secondItem="yZz-ok-sBH" secondAttribute="trailing" id="Hhn-To-I7C"/>
+                        <constraint firstItem="ITx-wS-HQx" firstAttribute="leading" secondItem="q8F-gU-UND" secondAttribute="leading" id="U9n-QD-pjs"/>
+                        <constraint firstAttribute="bottom" secondItem="yZz-ok-sBH" secondAttribute="bottom" id="VCC-JQ-uoV"/>
+                        <constraint firstItem="yZz-ok-sBH" firstAttribute="height" secondItem="ITx-wS-HQx" secondAttribute="height" id="yrr-yl-yxq"/>
                     </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yck-u3-cj2" userLabel="Upper  Right Picture View">
-                    <rect key="frame" x="158" y="16" width="131" height="132"/>
-                    <subviews>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCU-GC-YeF" userLabel="Upper Right Button">
-                            <rect key="frame" x="0.0" y="0.0" width="133" height="132"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
-                            <state key="normal" title="+"/>
-                            <connections>
-                                <action selector="SelectSpot:" destination="-1" eventType="touchUpInside" id="dD7-5a-xV5"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="yck-u3-cj2" secondAttribute="height" multiplier="131:132" id="AEG-op-ffV"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gg8-By-D3g" userLabel="Bottom Right Picture View">
-                    <rect key="frame" x="156" y="156" width="133" height="134"/>
-                    <subviews>
-                        <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBQ-C9-tmO" userLabel="Bottom Right Button">
-                            <rect key="frame" x="0.0" y="0.0" width="133" height="134"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
-                            <state key="normal" title="+"/>
-                            <connections>
-                                <action selector="SelectSpot:" destination="-1" eventType="touchUpInside" id="WkE-d6-02Z"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="gg8-By-D3g" secondAttribute="height" multiplier="133:134" id="dZY-rx-2Hp"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXT-3T-kHV" userLabel="Bottom Left Picture View">
-                    <rect key="frame" x="16" y="157" width="132" height="133"/>
-                    <subviews>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yW-h2-eIe" userLabel="Bottom Left Button">
-                            <rect key="frame" x="0.0" y="0.0" width="129" height="133"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
-                            <state key="normal" title="+"/>
-                            <connections>
-                                <action selector="SelectSpot:" destination="-1" eventType="touchUpInside" id="gZ1-q5-frv"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="wXT-3T-kHV" secondAttribute="height" multiplier="132:133" id="Z3n-gG-v5G"/>
-                    </constraints>
-                </view>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="0.062745098040000002" green="0.40000000000000002" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="12e-u4-3lX" firstAttribute="top" secondItem="rHQ-GO-ucR" secondAttribute="top" constant="16" id="5Ar-VC-inK"/>
-                <constraint firstAttribute="bottom" secondItem="wXT-3T-kHV" secondAttribute="bottom" constant="16" id="5P4-JD-Puj"/>
-                <constraint firstItem="gg8-By-D3g" firstAttribute="leading" secondItem="wXT-3T-kHV" secondAttribute="trailing" constant="8" id="Asl-eu-tm4"/>
-                <constraint firstItem="yck-u3-cj2" firstAttribute="leading" secondItem="12e-u4-3lX" secondAttribute="trailing" constant="8" id="FaH-yI-zzR"/>
-                <constraint firstItem="wXT-3T-kHV" firstAttribute="top" secondItem="12e-u4-3lX" secondAttribute="bottom" constant="8" id="Fyn-du-mIR"/>
-                <constraint firstItem="wXT-3T-kHV" firstAttribute="top" secondItem="12e-u4-3lX" secondAttribute="bottom" constant="8" id="Jfk-jM-7gT"/>
-                <constraint firstItem="wXT-3T-kHV" firstAttribute="leading" secondItem="rHQ-GO-ucR" secondAttribute="leading" constant="16" id="KuK-it-6dP"/>
-                <constraint firstItem="gg8-By-D3g" firstAttribute="leading" secondItem="wXT-3T-kHV" secondAttribute="trailing" constant="8" id="MXo-g7-uGI"/>
-                <constraint firstAttribute="bottom" secondItem="gg8-By-D3g" secondAttribute="bottom" constant="16" id="Yfn-Dv-Ae8"/>
-                <constraint firstAttribute="trailing" secondItem="yck-u3-cj2" secondAttribute="trailing" constant="16" id="Zw1-3V-iYl"/>
-                <constraint firstItem="12e-u4-3lX" firstAttribute="leading" secondItem="rHQ-GO-ucR" secondAttribute="leading" constant="16" id="c6s-Hl-8Vm"/>
-                <constraint firstAttribute="trailing" secondItem="gg8-By-D3g" secondAttribute="trailing" constant="16" id="d7g-lj-Qzt"/>
-                <constraint firstItem="gg8-By-D3g" firstAttribute="top" secondItem="yck-u3-cj2" secondAttribute="bottom" constant="8" id="ddm-1t-ekz"/>
-                <constraint firstItem="yck-u3-cj2" firstAttribute="leading" secondItem="12e-u4-3lX" secondAttribute="trailing" constant="8" id="sXr-yG-TgU"/>
-                <constraint firstItem="yck-u3-cj2" firstAttribute="top" secondItem="rHQ-GO-ucR" secondAttribute="top" constant="16" id="tdM-Ao-mlE"/>
-                <constraint firstItem="gg8-By-D3g" firstAttribute="top" secondItem="yck-u3-cj2" secondAttribute="bottom" constant="8" id="xJF-bV-ivC"/>
+                <constraint firstItem="q8F-gU-UND" firstAttribute="leading" secondItem="qbe-Id-ZSG" secondAttribute="leading" constant="16" id="O7g-wI-tbz"/>
+                <constraint firstItem="qbe-Id-ZSG" firstAttribute="bottom" secondItem="q8F-gU-UND" secondAttribute="bottom" constant="16" id="TRG-0K-klC"/>
+                <constraint firstItem="qbe-Id-ZSG" firstAttribute="trailing" secondItem="q8F-gU-UND" secondAttribute="trailing" constant="16" id="okx-Xo-iyG"/>
+                <constraint firstItem="q8F-gU-UND" firstAttribute="top" secondItem="qbe-Id-ZSG" secondAttribute="top" constant="16" id="wv2-gF-cov"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="qbe-Id-ZSG"/>

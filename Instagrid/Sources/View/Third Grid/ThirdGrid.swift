@@ -12,20 +12,22 @@ final class ThirdGrid: UIView, GridType {
     
     // MARK: - Outlets
     
-    @IBOutlet var contentView: UIView!
+    @IBOutlet private var contentView: UIView!
     
-    @IBOutlet weak var upperLeftPictureView: UIView!
-    @IBOutlet weak var upperLeftButton: UIButton!
+    @IBOutlet private weak var upperLeftPictureView: UIView!
+    @IBOutlet private weak var upperLeftButton: UIButton!
     
-    @IBOutlet weak var upperRightPictureView: UIView!
-    @IBOutlet weak var upperRightButton: UIButton!
+    @IBOutlet private weak var upperRightPictureView: UIView!
+    @IBOutlet private weak var upperRightButton: UIButton!
     
-    @IBOutlet weak var bottomRightPictureView: UIView!
-    @IBOutlet weak var bottomRightButton: UIButton!
+    @IBOutlet private weak var bottomRightPictureView: UIView!
+    @IBOutlet private weak var bottomRightButton: UIButton!
     
-    @IBOutlet weak var bottomLeftPictureView: UIView!
-    @IBOutlet weak var bottomLeftButton: UIButton!
+    @IBOutlet private weak var bottomLeftPictureView: UIView!
+    @IBOutlet private weak var bottomLeftButton: UIButton!
     
+    // MARK: - Private properties
+
     private var viewModel: GridViewModel!
     
     private weak var delegate: GridDelegate?
@@ -43,7 +45,8 @@ final class ThirdGrid: UIView, GridType {
     }
     
     private func initialize() {
-        Bundle(for: type(of: self)).loadNibNamed("ThirdGrid", owner: self, options: nil)
+        Bundle(for: type(of: self)).loadNibNamed(String(describing: ThirdGrid.self),
+                                                 owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

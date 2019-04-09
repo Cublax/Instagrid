@@ -8,22 +8,22 @@
 
 import UIKit
 
-
 final class FirstGrid: UIView, GridType {
     
     // MARK: - Outlets
     
-    @IBOutlet var contentView: UIView!
+    @IBOutlet private var contentView: UIView!
     
-    @IBOutlet weak var upperLeftPictureView: UIView!
-    @IBOutlet weak var upperLeftButton: UIButton!
+    @IBOutlet private weak var upperLeftPictureView: UIView!
+    @IBOutlet private weak var upperLeftButton: UIButton!
     
-    @IBOutlet weak var upperRightPictureView: UIView!
-    @IBOutlet weak var upperRightButton: UIButton!
+    @IBOutlet private weak var upperRightPictureView: UIView!
+    @IBOutlet private weak var upperRightButton: UIButton!
     
-    @IBOutlet weak var bottomPictureView: UIView!
-    @IBOutlet weak var bottomButton: UIButton!
+    @IBOutlet private weak var bottomPictureView: UIView!
+    @IBOutlet private weak var bottomButton: UIButton!
     
+    // MARK: - Private properties
     private var viewModel: GridViewModel!
     
     private weak var delegate: GridDelegate?
@@ -41,7 +41,8 @@ final class FirstGrid: UIView, GridType {
     }
     
     private func initialize() {
-        Bundle(for: type(of: self)).loadNibNamed("FirstGrid", owner: self, options: nil)
+        Bundle(for: type(of: self)).loadNibNamed(String(describing: FirstGrid.self),
+                                                 owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

@@ -6,23 +6,24 @@
 //  Copyright © 2019 Alexandre Quiblier. All rights reserved.
 //
 
-
 import UIKit
 
 final class SecondGrid: UIView, GridType {
     
     // MARK: - Outlets
     
-    @IBOutlet var contentView:UIView!
+    @IBOutlet private var contentView:UIView!
     
-    @IBOutlet weak var topPictureView: UIView!
+    @IBOutlet private weak var topPictureView: UIView!
     @IBOutlet weak var topButton: UIButton!
     
-    @IBOutlet weak var bottomRightPictureView: UIView!
-    @IBOutlet weak var bottomRightButton: UIButton!
+    @IBOutlet private weak var bottomRightPictureView: UIView!
+    @IBOutlet private weak var bottomRightButton: UIButton!
     
-    @IBOutlet weak var bottomLeftPictureView: UIView!
-    @IBOutlet weak var bottomLeftButton: UIButton!
+    @IBOutlet private weak var bottomLeftPictureView: UIView!
+    @IBOutlet private weak var bottomLeftButton: UIButton!
+    
+    // MARK: - Private properties
     
     private var viewModel: GridViewModel!
     
@@ -41,7 +42,8 @@ final class SecondGrid: UIView, GridType {
     }
     
     private func initialize() {
-        Bundle(for: type(of: self)).loadNibNamed("SecondGrid", owner: self, options: nil)
+        Bundle(for: type(of: self)).loadNibNamed(String(describing: SecondGrid.self),
+                                                 owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

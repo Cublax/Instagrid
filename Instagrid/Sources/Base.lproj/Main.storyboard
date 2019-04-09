@@ -33,13 +33,13 @@
                                         <rect key="frame" x="110.5" y="0.0" width="42" height="45.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-AT-juP" userLabel="Direction Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Py3-aG-zzB" userLabel="Swipe Direction Label">
-                                                <rect key="frame" x="0.0" y="28.5" width="42" height="17"/>
+                                                <rect key="frame" x="0.0" y="25" width="42" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="msn-sQ-yM7" secondAttribute="height" multiplier="1:1" id="jkQ-Pw-F10"/>
                                                 </constraints>
-                                                <state key="normal" image="Layout 1"/>
+                                                <state key="normal" image="Layout 2"/>
                                                 <connections>
                                                     <action selector="didPressFirstGridButton:" destination="ykT-xN-yZM" eventType="touchUpInside" id="e8h-0x-GfQ"/>
                                                 </connections>
@@ -76,7 +76,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Xsb-V8-3gE" secondAttribute="height" multiplier="1:1" id="uGg-qR-yEa"/>
                                                 </constraints>
-                                                <state key="normal" image="Layout 2"/>
+                                                <state key="normal" image="Layout 1"/>
                                                 <connections>
                                                     <action selector="didPressSecondGridButton:" destination="ykT-xN-yZM" eventType="touchUpInside" id="9oh-t6-mAS"/>
                                                 </connections>
