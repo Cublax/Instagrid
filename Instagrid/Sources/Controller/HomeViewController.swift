@@ -89,8 +89,9 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Ne sert vraissemblabment a rien car instancié dans la methonde traitCollectionDidChange
+        //gridContainer.addGestureRecognizer(leftSwipeGestureRecognizer)
         
-        gridContainer.addGestureRecognizer(leftSwipeGestureRecognizer)
         
         bind(to: viewModel)
         viewModel.viewDidLoad()
@@ -134,14 +135,22 @@ final class HomeViewController: UIViewController {
                           duration: 0.5,
                           options: sender.direction == .left ? [.transitionFlipFromLeft] : [.transitionCurlUp],
                           animations: {},
-                          completion: { [weak self] _ in self?.displayAC() })
+                          completion: { [weak self] _ in self?.sharePicture() })
     }
     
-    private func displayAC() {
-        let activityVC = UIActivityViewController(activityItems: ["Insert grid here"], applicationActivities: nil)
+    private func sharePicture() {
+        
+        UIGraphicsBeginImageContext(gridContainer.frame.size)
+        gridContainer.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        let activityVC = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = self.view
         self.present(activityVC, animated: true, completion: nil)
+      
     }
+    
+  
     
     private func configureContainer(for grid: GridType) {
         self.currentGrid = grid

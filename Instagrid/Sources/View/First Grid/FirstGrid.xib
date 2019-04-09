@@ -31,7 +31,8 @@
                         <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tj1-ff-DAt" userLabel="Bottom Button">
                             <rect key="frame" x="0.0" y="0.0" width="273" height="128"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <state key="normal" title="Button"/>
+                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                            <state key="normal" title="+"/>
                             <connections>
                                 <action selector="selectedSpot:" destination="-1" eventType="touchUpInside" id="qge-pZ-u2j"/>
                             </connections>
@@ -48,7 +49,8 @@
                         <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWr-8e-1TZ" userLabel="Upper Right Button">
                             <rect key="frame" x="0.0" y="0.0" width="130" height="128"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <state key="normal" title="Button"/>
+                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                            <state key="normal" title="+"/>
                             <connections>
                                 <action selector="selectedSpot:" destination="-1" eventType="touchUpInside" id="4wc-oJ-RK1"/>
                             </connections>
@@ -65,7 +67,8 @@
                         <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKx-xf-mnF" userLabel="Upper Left Button">
                             <rect key="frame" x="0.0" y="0.0" width="130" height="128"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <state key="normal" title="Button"/>
+                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
+                            <state key="normal" title="+"/>
                             <connections>
                                 <action selector="selectedSpot:" destination="-1" eventType="touchUpInside" id="A2d-XK-abz"/>
                             </connections>

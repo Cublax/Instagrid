@@ -52,6 +52,6 @@ final class HomeViewModel {
     
     func didChangeToRegular() {
         directionText?("<")
-        swipeDirectionText?("swipe-left")
+        swipeDirectionText?("swipe-left to share")
     }
 }

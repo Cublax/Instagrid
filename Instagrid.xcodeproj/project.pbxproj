@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC144D3A2257810500CE8010 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC144D392257810500CE8010 /* HomeViewModelTests.swift */; };
 		AC24986721F72918002EC428 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC24986621F72918002EC428 /* AppDelegate.swift */; };
 		AC24986E21F72919002EC428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC24986D21F72919002EC428 /* Assets.xcassets */; };
 		AC24987121F72919002EC428 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC24986F21F72919002EC428 /* LaunchScreen.storyboard */; };
@@ -20,7 +21,7 @@
 		AC8A94372226B48900A00877 /* ThirdGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8A94362226B48900A00877 /* ThirdGrid.xib */; };
 		AC8A94392226B66C00A00877 /* ThirdGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8A94382226B66C00A00877 /* ThirdGrid.swift */; };
 		ACB853AF2217168700F1653D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB853AE2217168700F1653D /* HomeViewController.swift */; };
-		ACC94D84224D0482007BA6B5 /* GridViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC94D83224D0482007BA6B5 /* GridViewModelTests.swift */; };
+		ACC94D85224D1BF8007BA6B5 /* GridViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC94D83224D0482007BA6B5 /* GridViewModelTests.swift */; };
 		ACCF23832226A19000929F3F /* SecondGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCF23822226A19000929F3F /* SecondGrid.swift */; };
 		ACF1DF6622310F2D00F402E0 /* GridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF1DF6522310F2D00F402E0 /* GridViewModel.swift */; };
 		ACFF0F00224B918500E11932 /* UIKit + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFF0EFF224B918500E11932 /* UIKit + UIView.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC144D392257810500CE8010 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		AC24986321F72918002EC428 /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC24986621F72918002EC428 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC24986B21F72918002EC428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				AC24987D21F72919002EC428 /* Info.plist */,
 				ACC94D83224D0482007BA6B5 /* GridViewModelTests.swift */,
+				AC144D392257810500CE8010 /* HomeViewModelTests.swift */,
 			);
 			path = InstagridTests;
 			sourceTree = "<group>";
@@ -119,7 +122,6 @@
 			children = (
 				AC24986621F72918002EC428 /* AppDelegate.swift */,
 				AC24986A21F72918002EC428 /* Main.storyboard */,
-				AC7C72A921FF18F700FA0CE0 /* Model */,
 				AC7C72A721FF18E500FA0CE0 /* Controller */,
 				AC7C72A821FF18EF00FA0CE0 /* View */,
 				ACFF0F01224B919600E11932 /* Utils */,
@@ -157,13 +159,6 @@
 				AC8A943C2226B68300A00877 /* Third Grid */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		AC7C72A921FF18F700FA0CE0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		AC8A94342226AB0A00A00877 /* First Grid */ = {
@@ -315,7 +310,6 @@
 				AC8A94392226B66C00A00877 /* ThirdGrid.swift in Sources */,
 				AC24986721F72918002EC428 /* AppDelegate.swift in Sources */,
 				ACCF23832226A19000929F3F /* SecondGrid.swift in Sources */,
-				ACC94D84224D0482007BA6B5 /* GridViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +317,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACC94D85224D1BF8007BA6B5 /* GridViewModelTests.swift in Sources */,
+				AC144D3A2257810500CE8010 /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
